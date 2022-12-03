@@ -1,0 +1,40 @@
+<!-- {% extends 'base.html' %} -->
+
+{% block 'content' %}
+<div class="row justify-content-center" >
+     
+    <div class="col-sm-4">
+       <div class="container">
+            {% load static %}<img src="{% static 'images/Login.jpg' %}"/>
+       </div>
+    </div>
+    <br/>
+    <div class="col-sm-4" style="width:30%;">
+        <div class="container">
+            <center>{% load static %}<img src="{% static 'images/vishal.png' %}"/></center>
+            <br/>
+            <form action="{% url 'main:userlogin' %}" method="POST">
+                {% csrf_token %}
+                   
+                        <div class="form-group">
+                            <label for="username">Username </label>
+                            <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <label for="password">Password </label>
+                            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+                        </div>
+                        <br/>
+                        
+                        <br/>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    
+                 
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}
